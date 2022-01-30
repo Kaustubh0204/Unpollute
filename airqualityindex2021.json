@@ -7,7 +7,7 @@
  {
   "id": -2,
   "name": "Kosovo",
-  "airQ": null
+  "airQ": 84
  },
  {
   "id": -3,
@@ -22,7 +22,7 @@
  {
   "id": 8,
   "name": "Albania",
-  "airQ": null
+  "airQ": 59
  },
  {
   "id": 10,
@@ -32,7 +32,7 @@
  {
   "id": 12,
   "name": "Algeria",
-  "airQ": null
+  "airQ": 68
  },
  {
   "id": 16,
