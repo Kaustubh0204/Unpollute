@@ -12,6 +12,8 @@ Now talking about how it works, I have added multiple data representation format
 I built it using HTML, CSS, Vanilla Javascript, D3 libraries, JSON/TSV integrations, Firebase integration and other helpful CSS libraries.
 
 <h2>Future scope</h2>
-There is some future scope for this project and it would consist of:
-Improvising the data set and not just focusing country wise but at city level.
-Adding some more text about frequently asked questions over global air quality.
+There is some future scope for this project and it would consist of:<br>
+<ul>
+ <li>Improvising the data set and not just focusing country wise but at city level.</li>
+<li>Adding some more text about frequently asked questions over global air quality.</li>
+</ul>
