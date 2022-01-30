@@ -19,6 +19,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;500;600;700&display=swap"
         rel="stylesheet">
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/996973c893.js" crossorigin="anonymous"></script>
     <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
     <!--Custom CSS-->
@@ -27,19 +29,37 @@
 
 <body style="background-color: #F8F8FA; font-family: 'Poppins', sans-serif;">
 
-    
+
     <div class="container my-5">
         <div class="row" style="background-color: white; border-radius: 2vw;">
-            <div class="col-5" style="margin-top: 15%; margin-left: 2%;">
+            <div class="col-5" style="margin-top: 5%; margin-left: 2%;">
                 <h1 style="font-size: 5vw; font-weight: 900; color: #0075FF;">Unpollute</h1>
+                <hr>
+                <br>
                 <div class="card text-dark bg-light mb-3" style="max-width: 18rem;">
                     <div class="card-header" id="current"></div>
-                    <div class="card-body">
-                      <h5 class="card-title" id="airq"></h5>
+                    <div class="card-body" id="airqbg">
+                        <h5 class="card-title" id="airq"></h5>
                     </div>
-                  </div>
-                <!-- <h2 style="color: black;" id="current"></h2><br><br>
-                <h2 style="color: black;" id="airq"></h2> -->
+                </div>
+
+                <div class="card text-dark bg-light mb-3" style="max-width: 18rem;">
+                    <div class="card-header">Air Quality Index Map Legend</div>
+                    <div class="card-body">
+
+                        <ul class="list-group">
+                            <li class="list-group-item"><i class="fas fa-square" style="color: #B6DDA7;"></i> &nbspGood</li>
+                            <li class="list-group-item"><i class="fas fa-square" style="color: #F3E291;"></i> &nbspModerate</li>
+                            <li class="list-group-item"><i class="fas fa-square" style="color: #FF9A47;"></i> &nbspUnhealthy for minors</li>
+                            <li class="list-group-item"><i class="fas fa-square" style="color: #FF3333"></i> &nbspUnhealthy</li>
+                            <li class="list-group-item"><i class="fas fa-square" style="color: #520001"></i> &nbspVery Unhealthy</li>
+                            <li class="list-group-item"><i class="fas fa-square" style="color: #140000"></i> &nbspHazardous</li>
+                            <li class="list-group-item"><i class="fas fa-square" style="color: gray"></i> &nbspNot Available</li>
+                        </ul>
+
+                    </div>
+                </div>
+
 
             </div>
             <div class="col">
@@ -98,39 +118,40 @@
 
     <div class="container my-5">
         <div class="row p-4 align-items-center" style="background-color: white; border-radius: 2vw;">
-            <h2 style="text-align: center;">Top 10 countries with the <span style="color: #0075FF;">worst</span> air pollution index</h2>
+            <h2 style="text-align: center;">Top 10 countries with the <span style="color: #0075FF;">worst</span> air
+                pollution index</h2>
             <hr>
             <br>
             <div class="col">
 
             </div>
             <div class="col">
-               <!-- <canvas id="myChart0"></canvas> -->
-               <div class="background" style="cursor: pointer;">
-                <div class="cardx">
-                    <div class="photo"></div>
-                    <h2 style="background-color: #0075FF; border-radius: 1vw; padding: 10px;">Top 10 worst AQI</h2>
-                    <br><br>
-                    <div class="chart">
-                        <div class="bar bar1"><span style="text-align: left;">Bahrain: 334</span></div>
-                        <div class="bar bar2"><span>Bonsia: 212</span></div>
-                        <div class="bar bar3"><span>Chad: 208</span></div>
-                        <div class="bar bar4"><span>China: 242</span></div>
-                        <div class="bar bar5"><span>India: 203</span></div>
-                        <div class="bar bar6"><span>Iran: 394</span></div>
-                        <div class="bar bar7"><span>Kuwait: 555</span></div>
-                        <div class="bar bar8"><span>Kyrgyzstan: 209</span></div>
-                        <div class="bar bar9"><span>Mongolia: 220</span></div>
-                        <div class="bar bar10"><span>Serbia: 189</span></div>
+                <!-- <canvas id="myChart0"></canvas> -->
+                <div class="background" style="cursor: pointer;">
+                    <div class="cardx">
+                        <div class="photo"></div>
+                        <h2 style="background-color: #0075FF; border-radius: 1vw; padding: 10px;">Top 10 worst AQI</h2>
+                        <br><br>
+                        <div class="chart">
+                            <div class="bar bar1"><span style="text-align: left;">Bahrain: 334</span></div>
+                            <div class="bar bar2"><span>Bonsia: 212</span></div>
+                            <div class="bar bar3"><span>Chad: 208</span></div>
+                            <div class="bar bar4"><span>China: 242</span></div>
+                            <div class="bar bar5"><span>India: 203</span></div>
+                            <div class="bar bar6"><span>Iran: 394</span></div>
+                            <div class="bar bar7"><span>Kuwait: 555</span></div>
+                            <div class="bar bar8"><span>Kyrgyzstan: 209</span></div>
+                            <div class="bar bar9"><span>Mongolia: 220</span></div>
+                            <div class="bar bar10"><span>Serbia: 189</span></div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            
+
             </div>
             <div class="col">
 
             </div>
-            
+
 
         </div>
     </div>
@@ -154,7 +175,7 @@
             <div class="card mb-3">
                 <img src="assets/mask1.png" class="card-img-top" alt="...">
                 <div class="card-body">
-                    
+
                     <p class="card-text">The most common and affordable mask are known that the 3M N95 masks (picture
                         above is for the 3M 9501 model). Despite being very affordable (5 to 6 RMB a piece), the 3M N95
                         are always among the top performing masks for Particulate Matter (i.e. PM2.5 Air Pollution). One
@@ -182,7 +203,7 @@
             <div class="card mb-3">
                 <img src="assets/mask2.png" class="card-img-top" alt="...">
                 <div class="card-body">
-                    
+
                     <p class="card-text">For those with a bit more budget and still interrested in the 3M masks, the
                         Aura™ 93xx series is a very good option. The cost is a bit higher (33 RMB for 1 piece for the
                         premimum 9332 model, while it is 29 RMB for 5 pcs for the previous 9501).<br><br>
@@ -200,7 +221,7 @@
             <div class="card mb-3">
                 <img src="assets/mask3.png" class="card-img-top" alt="...">
                 <div class="card-body">
-                    
+
                     <p class="card-text">Totobobo™ is a professional Singapore company manufacturing their own masks
                         since 2003. There design and concept is really unique, making it very useful for those on the
                         move.<br><br>
@@ -220,7 +241,7 @@
             <div class="card mb-3">
                 <img src="assets/mask4.png" class="card-img-top" alt="...">
                 <div class="card-body">
-                    
+
                     <p class="card-text">The Respro® Masks have been on the market for many years, and are especially
                         suitable in the "urban sports environment", i.e. when biking in the city and having to get
                         through heavy traffic where cars are the source of pollution (especially those diesel
@@ -242,7 +263,7 @@
             <div class="card mb-3">
                 <img src="assets/mask5.png" class="card-img-top" alt="...">
                 <div class="card-body">
-                    
+
                     <p class="card-text">Cambridge Masks is a new commer in the mask market, but with the huge advantage
                         of beeing lead by Christopher Dobbing, who was previously working for distributing Vogmask in
                         Asia.<br><br>

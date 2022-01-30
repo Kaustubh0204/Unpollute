@@ -14,7 +14,7 @@ var angles = { x: -20, y: 40, z: 0 }
 var colorWater = 'white'
 var colorLand = '#cce3ff'
 var colorGraticule = 'white'
-var colorCountry = '#0075FF'
+var colorCountry = '#cce3ff'
 
 
 //
@@ -144,7 +144,7 @@ function rotate(elapsed) {
 function loadData(cb) {
   d3.json('https://unpkg.com/world-atlas@1/world/110m.json', function (error, world) {
     if (error) throw error
-    d3.tsv('https://raw.githubusercontent.com/Kaustubh0204/Watchit/main/countrynamesandaqi-2.tsv', function (error, countries) {
+    d3.tsv('https://raw.githubusercontent.com/Kaustubh0204/Unpollute/main/countrynamesandaqi.tsv', function (error, countries) {
       // console.log(countries);
       if (error) throw error
       cb(world, countries)
@@ -223,27 +223,81 @@ loadData(function (world, cList) {
 })
 
 
-function displayCountries(inputname){
+function displayCountries(inputname) {
 
-fetch('https://raw.githubusercontent.com/Kaustubh0204/Watchit/main/airqualityindex2021.json')
-  .then(function (response) {
-    return response.json();
-  })
-  .then(function (data) {
+  fetch('https://raw.githubusercontent.com/Kaustubh0204/Unpollute/main/airqualityindex2021.json')
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
 
-    for(i = 0; i < data.length ; i++){
-    if(data[i].name == inputname){
-    console.log(data[i].airQ);
-    if(data[i].airQ == null)
-    data[i].airQ = 'N/A';
-    document.getElementById("airq").innerHTML = 'AIQ: ' + data[i].airQ;
-  }
-  }
+      for (i = 0; i < data.length; i++) {
+        if (data[i].name == inputname) {
+          if (data[i].airQ == null)
+            data[i].airQ = 'N/A';
+          document.getElementById("airq").innerHTML = 'AIQ: ' + data[i].airQ;
+          if (data[i].airQ >= 0 && data[i].airQ < 20) {
+            colorCountry = "#B6DDA7";
+            fill(currentCountry, colorCountry);
+            document.getElementById("current").style.backgroundColor = "#B6DDA7";
+            document.getElementById("current").style.opacity = "80%";
+            document.getElementById("current").style.color = "black";
+            document.getElementById("airqbg").style.color = "black";
+            document.getElementById("airqbg").style.backgroundColor = "#B6DDA7";
+          } else if (data[i].airQ >= 20 && data[i].airQ < 40) {
+            colorCountry = "#F3E291";
+            fill(currentCountry, colorCountry);
+            document.getElementById("current").style.backgroundColor = "#F3E291";
+            document.getElementById("current").style.opacity = "80%";
+            document.getElementById("current").style.color = "black";
+            document.getElementById("airqbg").style.color = "black";
+            document.getElementById("airqbg").style.backgroundColor = "#F3E291";
+          } else if (data[i].airQ >= 40 && data[i].airQ < 60) {
+            colorCountry = "#FF9A47";
+            fill(currentCountry, colorCountry);
+            document.getElementById("current").style.backgroundColor = "#FF9A47";
+            document.getElementById("current").style.opacity = "80%";
+            document.getElementById("current").style.color = "black";
+            document.getElementById("airqbg").style.color = "black";
+            document.getElementById("airqbg").style.backgroundColor = "#FF9A47";
+          } else if (data[i].airQ >= 60 && data[i].airQ < 100) {
+            colorCountry = "#FF3333";
+            fill(currentCountry, colorCountry);
+            document.getElementById("current").style.backgroundColor = "#FF3333";
+            document.getElementById("current").style.opacity = "80%";
+            document.getElementById("current").style.color = "white";
+            document.getElementById("airqbg").style.color = "white";
+            document.getElementById("airqbg").style.backgroundColor = "#FF3333";
+          } else if (data[i].airQ >= 100 && data[i].airQ < 150) {
+            colorCountry = "#520001";
+            fill(currentCountry, colorCountry);
+            document.getElementById("current").style.backgroundColor = "#520001";
+            document.getElementById("current").style.opacity = "80%";
+            document.getElementById("current").style.color = "white";
+            document.getElementById("airqbg").style.color = "white";
+            document.getElementById("airqbg").style.backgroundColor = "#520001";
+          } else if (data[i].airQ >= 150) {
+            colorCountry = "#140000";
+            fill(currentCountry, colorCountry);
+            document.getElementById("current").style.backgroundColor = "#140000";
+            document.getElementById("current").style.opacity = "80%";
+            document.getElementById("current").style.color = "white";
+            document.getElementById("airqbg").style.color = "white";
+            document.getElementById("airqbg").style.backgroundColor = "#140000";
+          } else {
+            colorCountry = "gray";
+            fill(currentCountry, colorCountry);
+            document.getElementById("current").style.backgroundColor = "gray";
+            document.getElementById("current").style.opacity = "80%";
+            document.getElementById("airqbg").style.backgroundColor = "gray";
+          }
+        }
+      }
 
-  })
-  .catch(function (err) {
+    })
+    .catch(function (err) {
 
-  });
+    });
 }
 
 //chartcard
